@@ -1,0 +1,21 @@
+﻿@model loginWeb1.Models.User
+
+@{
+    ViewBag.Title = "Email Doğrulama";
+}
+
+<h2>Email Doğrulama Sonucu</h2>
+
+@if (ViewBag.IsVerified == true)
+{
+    <div class="alert alert-success">
+        Email doğrulamanız başarılı oldu. Artık giriş yapabilirsiniz.
+    </div>
+    <a href="@Url.Action("Login", "Users")" class="btn btn-primary">Giriş Yap</a>
+}
+else
+{
+    <div class="alert alert-danger">
+        Email doğrulamanız başarısız oldu veya token geçersiz. Lütfen tekrar deneyin.
+    </div>
+}

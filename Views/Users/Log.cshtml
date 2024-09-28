@@ -1,0 +1,41 @@
+﻿@model IEnumerable<loginWeb1.Models.LoginAttempt>
+
+<p>
+    @Html.ActionLink("Giriş denemeleri", "login")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.AttemptedAt)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IsSuccessful)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FailureReason)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.AttemptedAt)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.IsSuccessful)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FailureReason)
+        </td>
+        
+    </tr>
+}
+
+</table>

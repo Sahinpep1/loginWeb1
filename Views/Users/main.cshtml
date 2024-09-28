@@ -1,0 +1,26 @@
+﻿@model loginWeb1.Models.User
+
+@{
+    ViewBag.Title = "Giriş Başarılı";
+}
+
+<h2>Oturum açıldı.</h2>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <h2>Hoş geldiniz, @ViewBag.Username</h2>
+
+    <p>
+        Şifrenizi değiştirmek için aşağıdaki butona tıklayın.
+    </p>
+
+    @Html.ActionLink("Şifre Değiştir", "Edit", "Users", new { id = ViewBag.UserId }, new { @class = "btn btn-primary" })
+<div>
+    @Html.ActionLink("Giriş Kayıtları", "Log", null, new { @class = "btn btn-secondary mt-3" })
+</div>
+
+
+}
+
